@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+    {% load static %}
+
+    <head>
+        <link rel="stylesheet" href="{% static 'css/estilos.css'  %}">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body>
+            <div class="page-nav">
+                <h1>Lico Tapetusa</h1>
+            </div>
+
+            <div class="page-content">
+                {% for producto in producto %}
+                    
+                    
+                    <div class="producto_contenido" >
+                        <h4>{{producto.name}}</h4>
+                        <p>{{producto.imagen}}</p>
+                        <img src="{% static 'imagenes/{{producto.imagen}}.jpg '%} " alt="">
+                        <p>$&nbsp;{{producto.cost}}</p>
+                        <a href="/Datos_Entrega/{{producto.id}}"button class="button-add">Comprar</a>
+                    </div>
+                
+                {% endfor %}
+
+
+            </div>
+
+
+    </body>
+
+</html>

@@ -11,35 +11,35 @@
  <body>
   <div class="container">
 	  <div class="title">Datos de envio</div>
-	  <form action="/Enviar_datos/" method="">
+	  <form action="/Enviar_datos/" method="POST">{% csrf_token%}
 		  <div class="user-details">
 			  <div class="input-box">
 				<span class="details">Nombre y apellido</span>
-			  	<input type="text" placeholder="Ingrese su nombre completo" required name="nombres">
+			  	<input type="text" placeholder="Ingrese su nombre completo" name="nombres" required >
 			  </div>
 			  <div class="input-box">
 				<span class="details">Documento de identidad</span>
-				<input type="text" placeholder="Ingrese su documento" required name="id">
+				<input type="text" placeholder="Ingrese su documento" name="id" required >
 			  </div>
 			  <div class="input-box">
 				<span class="details">Correo electrónico</span>
-				<input type="text" placeholder="Ingrese su correo" required name="correo">
+				<input type="text" placeholder="Ingrese su correo" name="correo" required >
 			  </div>
 			  <div class="input-box">
 				<span class="details">Dirección</span>
-				<input type="text" placeholder="Ingrese su dirección" required name="direccion">
+				<input type="text" placeholder="Ingrese su dirección" name="direccion" required >
 			  </div>
 			  <div class="input-box">
 				<span class="details">Departamento</span>
-				<input type="text" placeholder="Ingrese el departamento de residencia" required name="Depa">
+				<input type="text" placeholder="Ingrese el departamento de residencia" name="Depa" required >
 			  </div>
 			  <div class="input-box">
 				<span class="details">Ciudad</span>
-				<input type="text" placeholder="Ingrese ciudad de residencia" required name="ciudad">
+				<input type="text" placeholder="Ingrese ciudad de residencia" name="ciudad" required >
 			  </div>
 			  <div class="input-box">
 				<span class="details">Teléfono</span>
-				<input type="text" placeholder="Ingrese su número telefónico" required name="telefono">
+				<input type="text" placeholder="Ingrese su número telefónico" name="telefono" required >
 			  </div>
 			  <div class="Texto pagar">
 				<input type="hidden" value="{{producto.cost}}" name="costo">
@@ -47,6 +47,10 @@
 			  </div>
 			  <div>
 				<input type="hidden" value="{{producto.name}}" name="nombre_producto">
+			  </div>
+			  <div class="input-box">
+				<span class="details">Cantidad</span>
+				<input type="text" placeholder="Ingresa la cantidad a comprar" name="stock" required>
 			  </div>
 			  <div class="button">
 				  <input type="submit" value="Comprar ahora">
