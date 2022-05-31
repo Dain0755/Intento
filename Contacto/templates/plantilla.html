@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	{% load static %}
+ <head>
+	 <meta charset="UTF-8">
+     <title>Registro de envio</title>
+	 
+	 <link rel="stylesheet" href="{% static 'css/style.css' %}">
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ </head>
+ <body>
+  <div class="container">
+	  <div class="title">Datos de envio</div>
+	  <form action="/Enviar_datos/" method="">
+		  <div class="user-details">
+			  <div class="input-box">
+				<span class="details">Nombre y apellido</span>
+			  	<input type="text" placeholder="Ingrese su nombre completo" required name="nombres">
+			  </div>
+			  <div class="input-box">
+				<span class="details">Documento de identidad</span>
+				<input type="text" placeholder="Ingrese su documento" required name="id">
+			  </div>
+			  <div class="input-box">
+				<span class="details">Correo electrónico</span>
+				<input type="text" placeholder="Ingrese su correo" required name="correo">
+			  </div>
+			  <div class="input-box">
+				<span class="details">Dirección</span>
+				<input type="text" placeholder="Ingrese su dirección" required name="direccion">
+			  </div>
+			  <div class="input-box">
+				<span class="details">Departamento</span>
+				<input type="text" placeholder="Ingrese el departamento de residencia" required name="Depa">
+			  </div>
+			  <div class="input-box">
+				<span class="details">Ciudad</span>
+				<input type="text" placeholder="Ingrese ciudad de residencia" required name="ciudad">
+			  </div>
+			  <div class="input-box">
+				<span class="details">Teléfono</span>
+				<input type="text" placeholder="Ingrese su número telefónico" required name="telefono">
+			  </div>
+			  <div class="Texto pagar">
+				<input type="hidden" value="{{producto.cost}}" name="costo">
+			  	<h2> $ Total a pagar: {{producto.cost}}</h2>
+			  </div>
+			  <div>
+				<input type="hidden" value="{{producto.name}}" name="nombre_producto">
+			  </div>
+			  <div class="button">
+				  <input type="submit" value="Comprar ahora">
+			  </div>
+			  
+		  </div> 
+		</form>
+  </div>
+
+
+
+
+
+ </body>
+</html>
